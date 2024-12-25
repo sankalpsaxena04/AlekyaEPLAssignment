@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AlekyaEPL Assignment</string>
+    <string name="dec"><u>Dec</u></string>
 </resources>

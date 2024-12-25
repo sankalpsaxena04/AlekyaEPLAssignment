@@ -14,7 +14,7 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
         private val eventTitle: TextView = itemView.findViewById(R.id.eventTitle)
         private val eventDate: TextView = itemView.findViewById(R.id.eventDate)
         private val eventTime: TextView = itemView.findViewById(R.id.eventTime)
-        private val eventColor: View = itemView.findViewById(R.id.eventColor)
+        private val eventColor: View = itemView.findViewById(R.id.card)
         fun bind(event: Event) {
             eventTitle.text = event.title
             eventDate.text = event.date

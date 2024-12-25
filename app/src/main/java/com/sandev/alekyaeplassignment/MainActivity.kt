@@ -11,6 +11,7 @@ import com.sandev.alekyaeplassignment.Domain.Models.Event
 import com.sandev.alekyaeplassignment.viewModel.SchedulerViewModel
 import com.sandev.alekyaeplassignment.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.random.Random
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -49,12 +50,19 @@ class MainActivity : AppCompatActivity() {
                 attendees = listOf("Attendee 1"),
                 date = selectedDate,
                 time = selectedTime,
-                color = "#FF5733"
+                color = getRandomBrightColor()
             )
             viewModel.saveEvent(newEvent)
         }
     }
+    fun getRandomBrightColor(): String {
+        val random = Random.Default
+        val red = random.nextInt(128, 256)
+        val green = random.nextInt(128, 256)
+        val blue = random.nextInt(128, 256)
 
+        return String.format("#%02X%02X%02X", red, green, blue)
+    }
     private fun setupTimeSpinners() {
         val hours = (1..12).map { it.toString().padStart(2, '0') }
         val minutes = (0..59).map { it.toString().padStart(2, '0') }
